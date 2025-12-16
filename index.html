@@ -58,13 +58,6 @@
         </div>
     </div>
 
-    <!-- Si quieres seguir usando audio, lo puedes dejar aquí (opcional) -->
-    <!--
-    <audio id="AudioId">
-        <source src="notification_client.mp3" type="audio/mpeg">
-    </audio>
-    -->
-
     <script>
         function initEmbeddedMessaging() {
             try {
@@ -80,21 +73,6 @@
                         "IATA": "0"
                     });
                 });
-
-                // Listener de mensajes (si sigues usando audio, lo adaptas aquí)
-                /*
-                window.addEventListener("onEmbeddedMessageSent", (event) => {
-                    const messageDetail = event.detail;
-                    const senderRole = messageDetail.conversationEntry.sender.role;
-
-                    if (senderRole === "Agent") {
-                        const objSound = document.getElementById("AudioId");
-                        if (objSound) {
-                            objSound.play().catch(err => console.error("Error audio:", err));
-                        }
-                    }
-                });
-                */
 
                 // Init del Embedded Messaging
                 embeddedservice_bootstrap.init(
