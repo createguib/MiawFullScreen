@@ -1,1 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <title>Página principal</title>
+</head>
+<body>
+    <h1>Página principal</h1>
+    <p>Haz clic en el botón para abrir el chat en otra pestaña.</p>
 
+    <button onclick="abrirChatEnOtraPestana()">
+        Abrir chat con agente
+    </button>
+
+    <script>
+        function abrirChatEnOtraPestana() {
+            // IMPORTANTE: Ajusta la URL según dónde esté alojado tu archivo
+            // Si index.html y chat-fullscreen.html están en la misma carpeta,
+            // basta con usar el nombre del archivo:
+            const urlChat = 'chat-fullscreen.html';
+
+            window.open(
+                urlChat,
+                '_blank',               // pestaña nueva
+                'noopener,noreferrer'   // por seguridad / performance
+            );
+        }
+    </script>
+</body>
+</html>
