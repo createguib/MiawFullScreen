@@ -1,30 +1,43 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8" />
-    <title>Página principal</title>
-</head>
-<body>
-    <h1>Página principal</h1>
-    <p>Haz clic en el botón para abrir el chat en otra pestaña.</p>
+<style>
+  /* Burbuja flotante tipo widget de chat */
+  #customChatLauncher {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background-color: #0070d2; /* cambia al color corporativo o el de Salesforce */
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 9999;
+      color: #fff;
+      font-size: 28px;
+      border: none;
+  }
 
-    <button onclick="abrirChatEnOtraPestana()">
-        Abrir chat con agente
-    </button>
+  #customChatLauncher:hover {
+      background-color: #005fb2;
+  }
+</style>
 
-    <script>
-        function abrirChatEnOtraPestana() {
-            // IMPORTANTE: Ajusta la URL según dónde esté alojado tu archivo
-            // Si index.html y chat-fullscreen.html están en la misma carpeta,
-            // basta con usar el nombre del archivo:
-            const urlChat = 'chat-fullscreen.html';
+<div id="customChatLauncher" onclick="abrirChatEnOtraPestana()" title="Hablar con un agente">
+    <!-- Puedes poner un ícono, por ejemplo un Unicode o un SVG -->
+    ?
+</div>
 
-            window.open(
-                urlChat,
-                '_blank',               // pestaña nueva
-                'noopener,noreferrer'   // por seguridad / performance
-            );
-        }
-    </script>
-</body>
-</html>
+<script>
+  function abrirChatEnOtraPestana() {
+      // Usa la URL real donde está tu chat fullscreen
+      const urlChat = 'chat-fullscreen.html';
+
+      window.open(
+          urlChat,
+          '_blank',
+          'noopener,noreferrer'
+      );
+  }
+</script>
